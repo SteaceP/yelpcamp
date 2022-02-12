@@ -23,7 +23,7 @@ const MongoStore = require("connect-mongo");
 
 const dbUrl = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.vcvoi.mongodb.net/yelpcamp?retryWrites=true&w=majority`;
 
-mongoose.connect(dbUrl);
+mongoose.connect(dbUrl, { useNewUrlParser: true });
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
