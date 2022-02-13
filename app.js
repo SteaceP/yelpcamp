@@ -78,7 +78,7 @@ const sessionConfig = {
 
 app.use(session(sessionConfig));
 app.use(flash());
-app.use(helmet());
+app.use(helmet({ crossOriginEmbedderPolicy: false }));
 
 const scriptSrcUrls = [
   "https://stackpath.bootstrapcdn.com",
@@ -87,6 +87,7 @@ const scriptSrcUrls = [
   "https://kit.fontawesome.com",
   "https://cdnjs.cloudflare.com",
   "https://cdn.jsdelivr.net",
+  "https://res.cloudinary.com/steace/",
 ];
 const styleSrcUrls = [
   "https://kit-free.fontawesome.com",
@@ -95,13 +96,16 @@ const styleSrcUrls = [
   "https://api.tiles.mapbox.com",
   "https://fonts.googleapis.com",
   "https://use.fontawesome.com",
+  "https://cdn.jsdelivr.net/",
+  "https://res.cloudinary.com/steace/",
 ];
 const connectSrcUrls = [
   "https://api.mapbox.com",
   "https://*.tiles.mapbox.com",
   "https://events.mapbox.com",
+  "https://res.cloudinary.com/steace/",
 ];
-const fontSrcUrls = [];
+const fontSrcUrls = ["https://res.cloudinary.com/steace/"];
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
@@ -116,7 +120,7 @@ app.use(
         "'self'",
         "blob:",
         "data:",
-        "https://res.cloudinary.com/steace",
+        "https://res.cloudinary.com/steace/",
         "https://images.unsplash.com",
       ],
       fontSrc: ["'self'", ...fontSrcUrls],
