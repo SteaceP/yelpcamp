@@ -8,7 +8,6 @@ const dbUrl = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSW
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
 });
 
 const db = mongoose.connection;

@@ -26,9 +26,9 @@ const dbUrl = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSW
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
 });
+
+mongoose.set("strictPopulate", false);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -150,6 +150,11 @@ app.get("/", (_req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Cross-Origin-Resource-Policy", "cross-origin");
   res.render("home");
+});
+
+// for live check
+app.get("/ping", function (req, res) {
+  res.send("pong!", 200);
 });
 
 app.all("*", (_req, _res, next) => {
