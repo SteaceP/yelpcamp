@@ -2,17 +2,17 @@
 
 ---
 
-- ~~~Mapbox is broken after update to v4 ~~~
+- ~~Mapbox is broken after update to v4 ~~
 
 - Auth flow is broken, registering work but users won't stay logged in
 
-- Yelpcamp Logo/Text don't redirect to `/campgrounds` anymore
+- Yelpcamp Logo/Text don't redirect to ```/campgrounds``` anymore
 
-- ~~~Cloudinary is broken, app won't even start~~~
+- ~~Cloudinary is broken, app won't even start~~
 
-- ~~~Helmet 5 introduce bugs in the app ~~~ Still need to work around `img-src 'self'```
+- ~~Helmet 5 introduce bugs in the app ~~ Still need to work around ```img-src 'self'```
 
-- ~~~Mongoose 6 introduced some bugs~~~
+- ~~Mongoose 6 introduced some bugs~~
 
 #### TODO
 
