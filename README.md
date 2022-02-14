@@ -2,7 +2,6 @@
 
 ---
 
-<!-- prettier-ignore -->
 - ~~~Mapbox is broken after update to v4 ~~~
 
 - Auth flow is broken, registering work but users won't stay logged in

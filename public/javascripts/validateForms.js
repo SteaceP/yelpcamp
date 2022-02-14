@@ -1,4 +1,4 @@
-(function () {
+(() => {
   "use strict";
 
   bsCustomFileInput.init();
@@ -7,10 +7,10 @@
   const forms = document.querySelectorAll(".validated-form");
 
   // Loop over them and prevent submission
-  Array.from(forms).forEach(function (form) {
+  Array.from(forms).forEach((form) => {
     form.addEventListener(
       "submit",
-      function (event) {
+      (event) => {
         if (!form.checkValidity()) {
           event.preventDefault();
           event.stopPropagation();

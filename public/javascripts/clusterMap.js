@@ -8,7 +8,7 @@ const map = new mapboxgl.Map({
 
 map.addControl(new mapboxgl.NavigationControl());
 
-map.on("load", function () {
+map.on("load", () => {
   // Add a new source from our GeoJSON data and
   // set the 'cluster' option to true. GL-JS will
   // add the point_count property to your source data.
@@ -72,7 +72,7 @@ map.on("load", function () {
   });
 
   // inspect a cluster on click
-  map.on("click", "clusters", function (e) {
+  map.on("click", "clusters", (e) => {
     const features = map.queryRenderedFeatures(e.point, {
       layers: ["clusters"],
     });
@@ -93,7 +93,7 @@ map.on("load", function () {
   // the unclustered-point layer, open a popup at
   // the location of the feature, with
   // description HTML from its properties.
-  map.on("click", "unclustered-point", function (e) {
+  map.on("click", "unclustered-point", (e) => {
     const { popUpMarkup } = e.features[0].properties;
     const coordinates = e.features[0].geometry.coordinates.slice();
 
@@ -107,10 +107,10 @@ map.on("load", function () {
     new mapboxgl.Popup().setLngLat(coordinates).setHTML(popUpMarkup).addTo(map);
   });
 
-  map.on("mouseenter", "clusters", function () {
+  map.on("mouseenter", "clusters", () => {
     map.getCanvas().style.cursor = "pointer";
   });
-  map.on("mouseleave", "clusters", function () {
+  map.on("mouseleave", "clusters", () => {
     map.getCanvas().style.cursor = "";
   });
 });

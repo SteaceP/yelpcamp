@@ -53,7 +53,7 @@ CampgroundSchema.virtual("properties.popUpMarkup").get(function () {
     <p>${this.description.substring(0, 20)}...</p>`;
 });
 
-CampgroundSchema.post("findOneAndDelete", async function (doc) {
+CampgroundSchema.post("findOneAndDelete", async (doc) => {
   if (doc) {
     await Review.deleteMany({
       _id: {
