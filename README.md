@@ -10,7 +10,7 @@
 
 - ~~Cloudinary is broken, app won't even start~~
 
-- ~~Helmet 5 introduce bugs in the app ~~ Still need to work around ```img-src 'self'```
+- ~~Helmet 5 introduce bugs in the app~~ Still need to work around ```img-src 'self'```
 
 - ~~Mongoose 6 introduced some bugs~~
 
